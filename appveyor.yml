@@ -43,12 +43,10 @@ build_script:
         return
     }
     cd c:\projects
-    dir
-    Write-Output "HIIIIIIIII"
     md _build -Force | Out-Null
     cd _build
 
-    & cmake -G "$generator" ..\
+    & cmake -G "$generator" ..\downloadproject
     if ($LastExitCode -ne 0) {
         throw "Exec: $ErrorMessage"
     }
